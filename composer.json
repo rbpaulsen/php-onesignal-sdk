@@ -1,0 +1,25 @@
+{
+    "name": "namnv609/php-onesignal-sdk",
+    "description": "PHP SDK for OneSignal RESTful API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "NamNV609",
+            "email": "namnv609@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NNV\\OneSignal\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^6.1",
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^3.0"
+    }
+}

@@ -39,7 +39,7 @@ class OneSignal
      */
     private $guzzleClient;
 
-    public function __construct($userAuthKey, $appIDKey = null, $restAPIKey = null, $options = array())
+    public function __construct($userAuthKey, $appIDKey = null, $restAPIKey = null, $options = [])
     {
         $this->apiBaseURI = 'https://onesignal.com/api/v1/';
         $this->userAuthKey = $userAuthKey;
@@ -47,9 +47,11 @@ class OneSignal
         $this->restAPIKey = $restAPIKey;
 
         $options = $this->getDefaultOptions($options);
-        $this->guzzleClient = new Client(array(
-            'base_uri' => $this->apiBaseURI,
-            'timeout' => $options['timeout'],
+        $this->guzzleClient = new Client(array_merge(
+            [
+                'base_uri' => $this->apiBaseURI
+            ],
+            $options
         ));
     }
 
@@ -82,11 +84,27 @@ class OneSignal
         return $this;
     }
 
+    public function execute($url, $method, array $options = [])
+    {
+        $defaultOptions = [
+            'headers' => [
+                'Authorization' => sprintf('Basic %s', $this->userAuthKey),
+            ],
+            'form_params' => [],
+        ];
+        $endpointURL = sprintf('%s%s', $this->apiBaseURI, $url);
+        $options = array_merge_recursive($defaultOptions, $options);
+
+        $response = $this->guzzleClient->request(strtoupper($method), $endpointURL, $options);
+
+        return json_decode($response->getBody()->getContents());
+    }
+
     private function getDefaultOptions(array $options)
     {
-        $defaultOptions = array(
+        $defaultOptions = [
             'timeout' => 30,
-        );
+        ];
 
         foreach ($defaultOptions as $option => $value) {
             if (isset($options[$option])) {

@@ -12,6 +12,23 @@ use NNV\OneSignal\API\App;
 $oneSignal = new OneSignal('YOUR_USER_AUTH_KEY');
 $app = new App($oneSignal);
 
+# Find app by appId
 // dump($app->find('APP_ID'));
-dump($app->get());
-echo $oneSignal->getAPIBaseURI();
+
+# Get all apps
+// $apps = $app->get();
+// dump($apps);
+
+# Create app
+// $appData = [
+//     'name' => 'Test from API',
+//     'apns_env' => 'sanbox',
+// ];
+
+// dump($app->create($appData));
+
+# Update app
+$appData = [
+    'name' => 'Test from API updated',
+];
+dump($app->update('APP_ID', $appData));

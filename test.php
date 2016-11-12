@@ -8,15 +8,20 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use NNV\OneSignal\OneSignal;
 use NNV\OneSignal\API\App;
+use NNV\OneSignal\API\Player;
+
+$demoAppID = "APP_ID";
+$demoAppRestKey = "APP_REST_KEY";
 
 $oneSignal = new OneSignal('YOUR_USER_AUTH_KEY');
 $app = new App($oneSignal);
+$player = new Player($oneSignal, $demoAppID, $demoAppRestKey);
 
 # Find app by appId
-// dump($app->find('APP_ID'));
+// dump($app->get('APP_ID'));
 
 # Get all apps
-// $apps = $app->get();
+// $apps = $app->all();
 // dump($apps);
 
 # Create app
@@ -28,7 +33,8 @@ $app = new App($oneSignal);
 // dump($app->create($appData));
 
 # Update app
-$appData = [
-    'name' => 'Test from API updated',
-];
-dump($app->update('APP_ID', $appData));
+// $appData = [
+//     'name' => 'Test from API updated',
+// ];
+// dump($app->update('APP_ID', $appData));
+\Psy\Shell::debug(get_defined_vars());

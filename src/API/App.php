@@ -26,7 +26,7 @@ class App
      *
      * @return NNV\OneSignal\OneSignal::execute()
      */
-    public function get()
+    public function all()
     {
         $apps = $this->oneSignal->execute('apps', 'GET');
 
@@ -39,7 +39,7 @@ class App
      * @param  string $id App ID
      * @return NNV\OneSignal\OneSignal::execute()
      */
-    public function find($id)
+    public function get($id)
     {
         $url = sprintf('apps/%s', $id);
         $app = $this->oneSignal->execute($url, 'GET');

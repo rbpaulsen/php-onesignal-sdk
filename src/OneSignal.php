@@ -121,6 +121,16 @@ class OneSignal
     }
 
     /**
+     * Get REST API key
+     *
+     * @return string API Key for JSON API
+     */
+    public function getRESTAPIKey()
+    {
+        return $this->restAPIKey;
+    }
+
+    /**
      * Execute call API
      *
      * @param  string $url     URL to call
@@ -137,7 +147,7 @@ class OneSignal
             'form_params' => [],
         ];
         $endpointURL = sprintf('%s%s', $this->apiBaseURI, $url);
-        $options = array_merge_recursive($defaultOptions, $options);
+        $options = array_replace_recursive($defaultOptions, $options);
         $response = [];
 
         try {

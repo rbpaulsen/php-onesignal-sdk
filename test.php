@@ -5,15 +5,16 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '/vendor/autoload.php';
+load_env(__DIR__);
 
 use NNV\OneSignal\OneSignal;
 use NNV\OneSignal\API\App;
 use NNV\OneSignal\API\Player;
 
-$demoAppID = "APP_ID";
-$demoAppRestKey = "APP_REST_KEY";
+$demoAppID = env("APP_ID");
+$demoAppRestKey = env("APP_REST_KEY");
 
-$oneSignal = new OneSignal('YOUR_USER_AUTH_KEY');
+$oneSignal = new OneSignal(env("USER_AUTH_KEY"));
 $app = new App($oneSignal);
 $player = new Player($oneSignal, $demoAppID, $demoAppRestKey);
 

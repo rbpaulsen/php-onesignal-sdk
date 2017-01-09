@@ -178,6 +178,20 @@ class OneSignal
     }
 
     /**
+     * Create new OneSignal instace
+     *
+     * @param string $userAuthKey User auth key
+     * @param string $appIDKey    App ID key
+     * @param string $restAPIKey  REST API key
+     * @param array  $options     Extra options for GuzzleHttp Client
+     * @return NNV\OneSignal\OneSignal New OneSignal instance
+     */
+    public function copy($userAuthKey, $appIDKey = null, $restAPIKey = null, $options = [])
+    {
+        return new OneSignal($userAuthKey, $appIDKey, $restAPIKey, $options);
+    }
+
+    /**
      * Get default options for GuzzleHttp Client
      *
      * @param  array  $options Extra options for GuzzleHttp Client

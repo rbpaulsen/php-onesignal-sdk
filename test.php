@@ -10,6 +10,7 @@ load_env(__DIR__);
 use NNV\OneSignal\OneSignal;
 use NNV\OneSignal\API\App;
 use NNV\OneSignal\API\Player;
+use NNV\OneSignal\Utils\Validation;
 
 $demoAppID = env("APP_ID");
 $demoAppRestKey = env("APP_REST_KEY");
@@ -38,4 +39,33 @@ $player = new Player($oneSignal, $demoAppID, $demoAppRestKey);
 //     'name' => 'Test from API updated',
 // ];
 // dump($app->update('APP_ID', $appData));
+
+
+$rules = [
+    'required' => [
+        'name',
+        'email'
+    ],
+    'defined' => [
+        'name' => [
+            'types' => 'string',
+        ],
+        'email' => [
+            'types' => function() {
+                return false;
+            },
+        ],
+        'gender' => [
+            'types' => 'string',
+            'values' => ['Male', 'Female', 'Unknow'],
+        ]
+    ]
+];
+$data = [
+    'email' => 'namnv609@gmail.com',
+    'name' => '123456',
+    'gender' => 'ABC'
+];
+$validate = new Validation();
+
 \Psy\Shell::debug(get_defined_vars());

@@ -48,24 +48,28 @@ $rules = [
     ],
     'defined' => [
         'name' => [
-            'types' => 'string',
+            'allowedTypes' => 'string',
         ],
         'email' => [
-            'types' => function() {
-                return false;
-            },
+            'allowedTypes' => 'string',
         ],
         'gender' => [
-            'types' => 'string',
-            'values' => ['Male', 'Female', 'Unknow'],
+            'allowedTypes' => 'string',
+            'allowedValues' => ['Male', 'Female', 'Unknow'],
         ]
     ]
 ];
 $data = [
-    'email' => 'namnv609@gmail.com',
+    'email' => 'namnv609',
     'name' => '123456',
     'gender' => 'ABC'
 ];
-$validate = new Validation();
+$validation = new Validation();
+$validation->setMultiRequired($rules['required'])
+           ->setMultiDefined($rules['defined'])
+           ->setAllowedValues('email', function($emailAddr) {
+                return filter_var($emailAddr, FILTER_VALIDATE_EMAIL);
+           });
+// $validation->validate($data);
 
 \Psy\Shell::debug(get_defined_vars());

@@ -30,7 +30,7 @@ class Validation
      */
     public function __call($methodName, $methodArgs)
     {
-        $selfMethods = ["setMultiRequired", "setMultiDefined"];
+        $selfMethods = ["setMultiRequired", "setMultiDefined", "validate"];
 
         if (in_array($methodName, $selfMethods)) {
             return call_user_func_array([$this, $methodName], $methodArgs);
@@ -74,5 +74,16 @@ class Validation
         }
 
         return $this;
+    }
+
+    /**
+     * Validate data
+     *
+     * @param  array  $data Data to validate
+     * @return mixed  Symfony\Component\OptionsResolver\Exception\InvalidOptionsException or null
+     */
+    public function validate(array $data)
+    {
+        return $this->optionsResolver->resolve($data);
     }
 }

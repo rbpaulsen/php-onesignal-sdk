@@ -30,7 +30,7 @@ class Validation
      */
     public function __call($methodName, $methodArgs)
     {
-        $selfMethods = ["setMultiRequired", "setMultiDefined", "validate"];
+        $selfMethods = ['setMultiRequired', 'setMultiDefined', 'validate'];
 
         if (in_array($methodName, $selfMethods)) {
             return call_user_func_array([$this, $methodName], $methodArgs);
@@ -64,12 +64,18 @@ class Validation
     {
         foreach ($definedOptions as $definedKey => $definedOption) {
             $this->optionsResolver->setDefined($definedKey);
+            $allowedTypes = null;
 
-            if (isset($definedOption["allowedTypes"])) {
-                $this->optionsResolver->setAllowedTypes($definedKey, $definedOption["allowedTypes"]);
+            if ($definedOption && isset($definedOption['allowedTypes'])) {
+                $allowedTypes = $definedOption['allowedTypes'];
+            } elseif ($definedOption && !isset($definedOption['allowedValues'])) {
+                $allowedTypes = $definedOption;
             }
-            if (isset($definedOption["allowedValues"])) {
-                $this->optionsResolver->setAllowedValues($definedKey, $definedOption["allowedValues"]);
+            if ($allowedTypes) {
+                $this->optionsResolver->setAllowedTypes($definedKey, $allowedTypes);
+            }
+            if (isset($definedOption['allowedValues'])) {
+                $this->optionsResolver->setAllowedValues($definedKey, $definedOption['allowedValues']);
             }
         }
 
@@ -80,7 +86,7 @@ class Validation
      * Validate data
      *
      * @param  array  $data Data to validate
-     * @return mixed  Symfony\Component\OptionsResolver\Exception\InvalidOptionsException or null
+     * @throws mixed  Symfony\Component\OptionsResolver\Exception\InvalidOptionsException or null
      */
     public function validate(array $data)
     {

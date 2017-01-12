@@ -153,6 +153,6 @@ class Player
 
     public function onPurchase($playerID, array $purchaseData)
     {
-        $url = sprintf("players/%s/on_purchase", $playerID);
+        $url = sprintf('players/%s/on_purchase', $playerID);
     }
 }

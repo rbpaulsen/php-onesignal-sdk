@@ -124,6 +124,7 @@ class App
      * Validate application data
      *
      * @param  array  $appData Application data
+     * @param  array  $validateRules Application validation rules
      * @throws mixed NNV\OneSignal\Utils\Validation::validate or null
      */
     private function validateAppData(array $appData, array $validateRules)

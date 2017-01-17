@@ -11,13 +11,18 @@ use NNV\OneSignal\OneSignal;
 use NNV\OneSignal\API\App;
 use NNV\OneSignal\API\Player;
 use NNV\OneSignal\Utils\Validation;
+use NNV\OneSignal\API\Notification;
 
 $demoAppID = env('APP_ID');
 $demoAppRestKey = env('APP_REST_KEY');
 
-$oneSignal = new OneSignal(env('USER_AUTH_KEY'));
+$oneSignal = new OneSignal(env('USER_AUTH_KEY'), $demoAppID, $demoAppRestKey);
 $app = new App($oneSignal);
-$player = new Player($oneSignal, $demoAppID, $demoAppRestKey);
+$player = new Player($oneSignal);
+$notification = new Notification($oneSignal);
+$otherOneSignal = $oneSignal->copy(null, 'Other AppID', 'Other RESTful API key', [
+    'timeout' => 20,
+]);
 
 # Find app by appId
 // dump($app->get('APP_ID'));

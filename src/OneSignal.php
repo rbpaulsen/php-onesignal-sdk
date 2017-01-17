@@ -43,6 +43,13 @@ class OneSignal
     private $guzzleClient;
 
     /**
+     * Guzzle extra options
+     *
+     * @var array
+     */
+    private $guzzleOptions;
+
+    /**
      * @param string $userAuthKey User auth key
      * @param string $appIDKey    App ID key
      * @param string $restAPIKey  REST API key
@@ -55,12 +62,12 @@ class OneSignal
         $this->appIDKey = $appIDKey;
         $this->restAPIKey = $restAPIKey;
 
-        $options = $this->getDefaultOptions($options);
+        $this->guzzleOptions = $this->getDefaultOptions($options);
         $this->guzzleClient = new Client(array_merge(
             [
                 'base_uri' => $this->apiBaseURI
             ],
-            $options
+            $this->guzzleOptions
         ));
     }
 
@@ -131,6 +138,16 @@ class OneSignal
     }
 
     /**
+     * Get Guzzle extra options
+     *
+     * @return array Guzzle extra options
+     */
+    public function getGuzzleOptions()
+    {
+        return $this->guzzleOptions;
+    }
+
+    /**
      * Execute call API
      *
      * @param  string $url     URL to call
@@ -186,8 +203,13 @@ class OneSignal
      * @param array  $options     Extra options for GuzzleHttp Client
      * @return NNV\OneSignal\OneSignal New OneSignal instance
      */
-    public function copy($userAuthKey, $appIDKey = null, $restAPIKey = null, $options = [])
+    public function copy($userAuthKey = null, $appIDKey = null, $restAPIKey = null, array $options = [])
     {
+        $userAuthKey    = ($userAuthKey ? $userAuthKey : $this->getUserAuth());
+        $appIDKey       = ($appIDKey ? $appIDKey : $this->getAppIDKey());
+        $restAPIKey     = ($restAPIKey ? $restAPIKey : $this->getRESTAPIKey());
+        $options        = ($options ? $options : $this->getGuzzleOptions());
+
         return new OneSignal($userAuthKey, $appIDKey, $restAPIKey, $options);
     }
 
@@ -199,16 +221,8 @@ class OneSignal
      */
     private function getDefaultOptions(array $options)
     {
-        $defaultOptions = [
+        return array_merge([
             'timeout' => 30,
-        ];
-
-        foreach ($defaultOptions as $option => $value) {
-            if (isset($options[$option])) {
-                $defaultOptions[$option] = $options[$option];
-            }
-        }
-
-        return $defaultOptions;
+        ], $options);
     }
 }

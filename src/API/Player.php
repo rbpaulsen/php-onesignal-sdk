@@ -43,18 +43,9 @@ class Player
      */
     public function __construct(OneSignal $oneSignal, $appIDKey = null, $restAPIKey = null)
     {
-        $this->oneSignal = $oneSignal;
-        $this->appIDKey = $appIDKey;
-        $this->restAPIKey = $restAPIKey;
-
-
-        if (!$this->appIDKey) {
-            $this->appIDKey = $oneSignal->getAppIDKey();
-        }
-        if (!$this->restAPIKey) {
-            $this->restAPIKey = $oneSignal->getRESTAPIKey();
-        }
-
+        $this->oneSignal    = $oneSignal;
+        $this->appIDKey     = ($appIDKey ? $appIDKey : $oneSignal->getAppIDKey());
+        $this->restAPIKey   = ($restAPIKey ? $restAPIKey : $oneSignal->getRESTAPIKey());
         $this->extraOptions = [
             'headers' => [
                 'Authorization' => sprintf('Basic %s', $this->restAPIKey),
@@ -247,12 +238,9 @@ class Player
             ];
         }
 
-        return $this->oneSignal->execute($url, 'POST', [
+        return $this->oneSignal->execute($url, 'POST', array_merge([
             'form_params' => $extraFields,
-            'headers' => [
-                'Authorization' => sprintf('Basic %s', $this->restAPIKey),
-            ]
-        ]);
+        ], $this->extraOptions));
     }
 
     /**

@@ -267,7 +267,7 @@ class Player
                 'ad_id' => 'string',
                 'sdk' => 'string',
                 'session_count' => 'int',
-                'tags' => 'string',
+                'tags' => 'array',
                 'amount_spent' => 'string',
                 'created_at' => 'int',
                 'playtime' => 'init',
@@ -337,13 +337,8 @@ class Player
 
         $validation->setMultiRequired($playerDataRules['required'])
                    ->setMultiDefined($playerDataRules['defined'])
-                   ->setAllowedValues('tags', function($tags) {
-                        json_decode($tags);
-
-                        return json_last_error() == JSON_ERROR_NONE;
-                   })
                    ->setNormalizer('tags', function(Options $options, $tags) {
-                        return json_decode($tags);
+                        return json_decode(json_encode($tags));
                    })
                    ->setAllowedValues('amount_spent', function($amountSpent) {
                         return preg_match('/^\-?\d+(\.\d{1,2})?$/', $amountSpent);

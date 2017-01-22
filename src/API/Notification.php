@@ -49,7 +49,6 @@ class Notification
         $this->extraOptions = [
             'headers' => [
                 'Authorization' => sprintf('Basic %s', $this->restAPIKey),
-                'Content-Type' => 'application/json',
             ]
         ];
     }
@@ -71,7 +70,74 @@ class Notification
         );
 
         return $this->oneSignal->execute('notifications', 'POST', array_merge([
+            'headers' => [
+                'Content-Type' => 'application/json',
+            ],
             'json' => $notificationData,
+        ], $this->extraOptions));
+    }
+
+    /**
+     * Stop a scheduled or currently outgoing notification
+     *
+     * @param  string $notificationID Notification ID
+     * @return \NNV\OneSignal\OneSignal::execute()
+     */
+    public function cancel($notificationID)
+    {
+        $url = sprintf('notifications/%s?app_id=%s', $notificationID, $this->appIDKey);
+
+        return $this->oneSignal->execute($url, 'DELETE', $this->extraOptions);
+    }
+
+    /**
+     * View the details of a single notification
+     *
+     * @param  string $notificationID Notification ID
+     * @return \NNV\OneSignal\OneSignal::execute()
+     */
+    public function get($notificationID)
+    {
+        $url = sprintf('notifications/%s?app_id=%s', $notificationID, $this->appIDKey);
+
+        return $this->oneSignal->execute($url, 'GET', $this->extraOptions);
+    }
+
+    /**
+     * View the details of multiple notifications
+     *
+     * @param  integer $limit  How many notifications to return.
+     * @param  integer $offset Result offset. Result are sorted by queued_at
+     * @return \NNV\OneSignal\OneSignal::execute()
+     */
+    public function all($limit = 10, $offset = 0)
+    {
+        $url = sprintf(
+            'notifications?app_id=%s&limit=%s&offset=%s',
+            $this->appIDKey,
+            $limit,
+            $offset
+        );
+
+        return $this->oneSignal->execute($url, 'GET', $this->extraOptions);
+    }
+
+    /**
+     * Track when users open a notification
+     *
+     * @param  string $notificationID Notification ID
+     * @return \NNV\OneSignal\OneSignal::execute()
+     */
+    public function trackOpen($notificationID)
+    {
+        $url = sprintf('notifications/%s', $notificationID);
+        $trackOpenData = [
+            'app_id' => $this->appIDKey,
+            'opened' => true,
+        ];
+
+        return $this->oneSignal->execute($url, 'PUT', array_merge([
+            'form_params' => $trackOpenData,
         ], $this->extraOptions));
     }
 

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class NNV\OneSignal\API\Player</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-NNV.html">
+						NNV<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-NNV.OneSignal.html">
+						OneSignal<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-NNV.OneSignal.API.html">
+						API					</a>
+
+						</li>
+				<li>
+					<a href="namespace-NNV.OneSignal.Constants.html">
+						Constants					</a>
+
+						</li>
+				<li>
+					<a href="namespace-NNV.OneSignal.Utils.html">
+						Utils					</a>
+
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-NNV.OneSignal.API.App.html">App</a></li>
+				<li><a href="class-NNV.OneSignal.API.Notification.html">Notification</a></li>
+				<li class="active"><a href="class-NNV.OneSignal.API.Player.html">Player</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-NNV.OneSignal.API.html" title="Summary of NNV\OneSignal\API"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Player</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-NNV.html">NNV</a>\<a href="namespace-NNV.OneSignal.html">OneSignal</a>\<a href="namespace-NNV.OneSignal.API.html">API</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-NNV.OneSignal.API.Player.html#9-385" title="Go to source code">API/Player.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#39-54" title="Go to source code">__construct</a>( <span><code><a href="class-NNV.OneSignal.OneSignal.html">NNV\OneSignal\OneSignal</a></code> <var>$oneSignal</var></span>, <span>string <var>$appIDKey</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$restAPIKey</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$oneSignal</var></dt>
+					<dd>OneSignal instance</dd>
+					<dt><var>$appIDKey</var></dt>
+					<dd>Application ID</dd>
+					<dt><var>$restAPIKey</var></dt>
+					<dd>API Key for REST JSON API</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="all" id="_all">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_all">#</a>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#56-74" title="Go to source code">all</a>( <span> <var>$limit</var> = <span class="php-num">10</span></span>, <span> <var>$offset</var> = <span class="php-num">0</span></span> )</code>
+
+		<div class="description short">
+			<p>Get all devices in application</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get all devices in application</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+				</div>
+
+
+				<h4>Var</h4>
+				<div class="list">
+						int How many devices to return<br>
+						int Result offset. Result are sorted by id<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#76-88" title="Go to source code">get</a>( <span>string <var>$playerID</var></span> )</code>
+
+		<div class="description short">
+			<p>View a device by Player id</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>View a device by Player id</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$playerID</var></dt>
+					<dd>Player ID</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create" id="_create">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create">#</a>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#90-109" title="Go to source code">create</a>( <span>string <var>$deviceType</var></span>, <span>array <var>$playerData</var></span> )</code>
+
+		<div class="description short">
+			<p>Create new device (Player)</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Create new device (Player)</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$deviceType</var></dt>
+					<dd>Device type. See more on \NNV\OneSignal\Constants\DeviceTypes</dd>
+					<dt><var>$playerData</var></dt>
+					<dd>Device details</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update" id="_update">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update">#</a>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#111-134" title="Go to source code">update</a>( <span>string <var>$playerID</var></span>, <span>array <var>$playerData</var></span> )</code>
+
+		<div class="description short">
+			<p>Edit an existing device in OneSignal.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Edit an existing device in OneSignal.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$playerID</var></dt>
+					<dd>Player ID to update</dd>
+					<dt><var>$playerData</var></dt>
+					<dd>Player data to update</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="onSession" id="_onSession">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_onSession">#</a>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#136-165" title="Go to source code">onSession</a>( <span>string <var>$playerID</var></span>, <span>array <var>$sessionData</var></span> )</code>
+
+		<div class="description short">
+			<p>Update a device's session information</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Update a device's session information</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$playerID</var></dt>
+					<dd>PlayerID</dd>
+					<dt><var>$sessionData</var></dt>
+					<dd>New application session</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="onPurchase" id="_onPurchase">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_onPurchase">#</a>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#167-203" title="Go to source code">onPurchase</a>( <span>string <var>$playerID</var></span>, <span>array <var>$purchaseData</var></span>, <span>boolean <var>$isExisting</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Track a new purchase in your app</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Track a new purchase in your app</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$playerID</var></dt>
+					<dd>Player (device) ID</dd>
+					<dt><var>$purchaseData</var></dt>
+					<dd>Purcharse data</dd>
+					<dt><var>$isExisting</var></dt>
+					<dd>Tracking the same purchases more than once if the user re-installs your app</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="onFocus" id="_onFocus">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_onFocus">#</a>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#205-223" title="Go to source code">onFocus</a>( <span>string <var>$playerID</var></span>, <span>array <var>$focusData</var></span> )</code>
+
+		<div class="description short">
+			<p>Update a device's session length upon app resuming</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Update a device's session length upon app resuming</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$playerID</var></dt>
+					<dd>Player (device) ID</dd>
+					<dt><var>$focusData</var></dt>
+					<dd>Focus data</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-NNV.OneSignal.OneSignal.html#_execute">NNV\OneSignal\OneSignal::execute()</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="csvExport" id="_csvExport">
+
+		<td class="attributes"><code>
+			 public 
+
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_csvExport">#</a>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#225-244" title="Go to source code">csvExport</a>( <span>array <var>$extraFields</var> = []</span> )</code>
+
+		<div class="description short">
+			<p>Generate a compressed CSV export of all of your current user data</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Generate a compressed CSV export of all of your current user data</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$extraFields</var></dt>
+					<dd>Additional fields that you wish to include. Currently supports location, country, and rooted</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					object<br>Object contain path to download csv gzip file
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

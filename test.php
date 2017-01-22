@@ -67,6 +67,49 @@ $data = [
     'name' => '123456',
     'gender' => 'ABC'
 ];
+$notificationData = [
+    'included_segments' => ['All', 'Free User'],
+    'contents' => [
+        'en' => 'Welcome',
+        'vi' => 'Chao mung',
+    ],
+    'headings' => [
+        'en' => 'Hello',
+        'vi' => 'Xin chao'
+    ],
+    'buttons' => [
+        [
+            'id' => 'id1',
+            'text' => 'Button 1',
+            'icon' => 'icon_1'
+        ],
+        [
+            'id' => 'id2',
+            'text' => 'Button 2',
+            'icon' => 'icon_2'
+        ]
+    ],
+    // 'filters' => [
+    //     [
+    //         'field' => 'tag',
+    //         'key' => 'level',
+    //         'relation' => '>',
+    //         'value' => '10'
+    //     ],
+    //     [
+    //         'field' => 'amount_spent',
+    //         'relation' => '>',
+    //         'value' => '0'
+    //     ]
+    // ],
+    'send_after' => 'Sep 24 2017 14:00:00 GMT-0700',
+    'delivery_time_of_day' => '09:00AM',
+    // 'include_player_ids' => ['2445818a-8e72-4477-a014-de8667d860a2'],
+    // 'isAndroid' => true,
+];
+
+
+
 $validation = new Validation();
 $validation->setMultiRequired($rules['required'])
            ->setMultiDefined($rules['defined'])

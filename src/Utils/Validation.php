@@ -4,6 +4,9 @@ namespace NNV\OneSignal\Utils;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Validation OneSignal API body parameters
+ */
 class Validation
 {
     /**

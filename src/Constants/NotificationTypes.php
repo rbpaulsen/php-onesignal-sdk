@@ -2,12 +2,18 @@
 
 namespace NNV\OneSignal\Constants;
 
+/**
+ * This class containt notification types of OneSignal
+ */
 class NotificationTypes
 {
     /**
-     * This class containt notification types of OneSignal
+     * Subscribed
      */
-
     const SUBSCRIBED    = 1;
+
+    /**
+     * Unsubscribed
+     */
     const UNSUBSCRIBED  = -2;
 }

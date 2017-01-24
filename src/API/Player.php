@@ -6,6 +6,9 @@ use \NNV\OneSignal\OneSignal;
 use \NNV\OneSignal\Utils\Validation;
 use Symfony\Component\OptionsResolver\Options;
 
+/**
+ * Player (Device) API
+ */
 class Player
 {
     /**

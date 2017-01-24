@@ -5,6 +5,9 @@ namespace NNV\OneSignal\API;
 use NNV\OneSignal\OneSignal;
 use NNV\OneSignal\Utils\Validation;
 
+/**
+ * Application API
+ */
 class App
 {
     /**

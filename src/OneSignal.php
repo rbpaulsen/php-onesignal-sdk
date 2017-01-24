@@ -7,6 +7,9 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Response;
 use Exception;
 
+/**
+ * OneSignal API
+ */
 class OneSignal
 {
     /**

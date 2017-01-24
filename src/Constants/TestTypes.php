@@ -2,12 +2,18 @@
 
 namespace NNV\OneSignal\Constants;
 
+/**
+ * This class containt test types of OneSignal
+ */
 class TestTypes
 {
     /**
-     * This class containt test types of OneSignal
+     * Development
      */
-
     const DEVELOPMENT   = 1;
+
+    /**
+     * Ad-Hoc
+     */
     const AD_HOC        = 2;
 }

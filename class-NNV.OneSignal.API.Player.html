@@ -99,6 +99,9 @@
 	<h1>Class Player</h1>
 
 
+	<div class="description">
+	<p>Player (Device) API</p>
+	</div>
 
 
 
@@ -114,7 +117,7 @@
 		<b>Namespace:</b> <a href="namespace-NNV.html">NNV</a>\<a href="namespace-NNV.OneSignal.html">OneSignal</a>\<a href="namespace-NNV.OneSignal.API.html">API</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-NNV.OneSignal.API.Player.html#9-385" title="Go to source code">API/Player.php</a>
+			<b>Located at</b> <a href="source-class-NNV.OneSignal.API.Player.html#9-388" title="Go to source code">API/Player.php</a>
 		<br>
 	</div>
 
@@ -134,7 +137,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-NNV.OneSignal.API.Player.html#39-54" title="Go to source code">__construct</a>( <span><code><a href="class-NNV.OneSignal.OneSignal.html">NNV\OneSignal\OneSignal</a></code> <var>$oneSignal</var></span>, <span>string <var>$appIDKey</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$restAPIKey</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#42-57" title="Go to source code">__construct</a>( <span><code><a href="class-NNV.OneSignal.OneSignal.html">NNV\OneSignal\OneSignal</a></code> <var>$oneSignal</var></span>, <span>string <var>$appIDKey</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$restAPIKey</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			
@@ -173,7 +176,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_all">#</a>
-		<code><a href="source-class-NNV.OneSignal.API.Player.html#56-74" title="Go to source code">all</a>( <span> <var>$limit</var> = <span class="php-num">10</span></span>, <span> <var>$offset</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#59-77" title="Go to source code">all</a>( <span> <var>$limit</var> = <span class="php-num">10</span></span>, <span> <var>$offset</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>Get all devices in application</p>
@@ -212,7 +215,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-NNV.OneSignal.API.Player.html#76-88" title="Go to source code">get</a>( <span>string <var>$playerID</var></span> )</code>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#79-91" title="Go to source code">get</a>( <span>string <var>$playerID</var></span> )</code>
 
 		<div class="description short">
 			<p>View a device by Player id</p>
@@ -251,7 +254,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-NNV.OneSignal.API.Player.html#90-109" title="Go to source code">create</a>( <span>string <var>$deviceType</var></span>, <span>array <var>$playerData</var></span> )</code>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#93-112" title="Go to source code">create</a>( <span>string <var>$deviceType</var></span>, <span>array <var>$playerData</var></span> )</code>
 
 		<div class="description short">
 			<p>Create new device (Player)</p>
@@ -292,7 +295,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_update">#</a>
-		<code><a href="source-class-NNV.OneSignal.API.Player.html#111-134" title="Go to source code">update</a>( <span>string <var>$playerID</var></span>, <span>array <var>$playerData</var></span> )</code>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#114-137" title="Go to source code">update</a>( <span>string <var>$playerID</var></span>, <span>array <var>$playerData</var></span> )</code>
 
 		<div class="description short">
 			<p>Edit an existing device in OneSignal.</p>
@@ -333,7 +336,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_onSession">#</a>
-		<code><a href="source-class-NNV.OneSignal.API.Player.html#136-165" title="Go to source code">onSession</a>( <span>string <var>$playerID</var></span>, <span>array <var>$sessionData</var></span> )</code>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#139-168" title="Go to source code">onSession</a>( <span>string <var>$playerID</var></span>, <span>array <var>$sessionData</var></span> )</code>
 
 		<div class="description short">
 			<p>Update a device's session information</p>
@@ -374,7 +377,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_onPurchase">#</a>
-		<code><a href="source-class-NNV.OneSignal.API.Player.html#167-203" title="Go to source code">onPurchase</a>( <span>string <var>$playerID</var></span>, <span>array <var>$purchaseData</var></span>, <span>boolean <var>$isExisting</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#170-206" title="Go to source code">onPurchase</a>( <span>string <var>$playerID</var></span>, <span>array <var>$purchaseData</var></span>, <span>boolean <var>$isExisting</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Track a new purchase in your app</p>
@@ -417,7 +420,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_onFocus">#</a>
-		<code><a href="source-class-NNV.OneSignal.API.Player.html#205-223" title="Go to source code">onFocus</a>( <span>string <var>$playerID</var></span>, <span>array <var>$focusData</var></span> )</code>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#208-226" title="Go to source code">onFocus</a>( <span>string <var>$playerID</var></span>, <span>array <var>$focusData</var></span> )</code>
 
 		<div class="description short">
 			<p>Update a device's session length upon app resuming</p>
@@ -458,7 +461,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_csvExport">#</a>
-		<code><a href="source-class-NNV.OneSignal.API.Player.html#225-244" title="Go to source code">csvExport</a>( <span>array <var>$extraFields</var> = []</span> )</code>
+		<code><a href="source-class-NNV.OneSignal.API.Player.html#228-247" title="Go to source code">csvExport</a>( <span>array <var>$extraFields</var> = []</span> )</code>
 
 		<div class="description short">
 			<p>Generate a compressed CSV export of all of your current user data</p>

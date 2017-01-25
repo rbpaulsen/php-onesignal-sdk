@@ -1,0 +1,24 @@
+{
+    "name": "namnv609/php-onesignal-sdk",
+    "description": "PHP SDK for OneSignal RESTful API",
+    "keywords": ["onesignal", "web push notification", "notification", "restful api"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "NamNV609",
+            "email": "namnv609@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NNV\\OneSignal\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^6.1",
+        "php": ">=5.4",
+        "symfony/options-resolver": "^3.2"
+    }
+}

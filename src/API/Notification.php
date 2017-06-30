@@ -152,7 +152,7 @@ class Notification
     private function getNotificationDataRules()
     {
         return [
-            'required' => ['included_segments', 'app_id'],
+            'required' => ['app_id'],
             'defined' => [
                 'app_id' => 'string',
                 'app_ids' => 'array',

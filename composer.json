@@ -17,7 +17,7 @@
     "minimum-stability": "dev",
     "require": {
         "guzzlehttp/guzzle": "^6.1",
-        "php": ">=5.4",
+        "php": ">=5.5",
         "symfony/options-resolver": "^3.2"
     },
     "require-dev": {

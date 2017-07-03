@@ -3,7 +3,7 @@
 > OneSignal is a high volume and reliable push notification service for websites and mobile applications. We support all major native and mobile platforms by providing dedicated SDKs for each platform, a RESTful server API, and an online dashboard for marketers to design and send push notifications.
 
 ## System requirements
-* **PHP >= 5.5
+* **PHP >= 5.5**
 
 ## Installation
 Using Composer

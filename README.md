@@ -7,7 +7,7 @@
 
 ## Installation
 Using Composer
-`composer install namnv609/php-onesignal-sdk`
+`composer require namnv609/php-onesignal-sdk`
 or you can include the following in your `composer.json`
 `"namnv609/php-onesignal-sdk": "1.0"`
 ### Response format

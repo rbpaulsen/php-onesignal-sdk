@@ -286,6 +286,7 @@ class Player
                 ],
                 'long' => 'double',
                 'lat' => 'double',
+                'external_user_id' => 'string',
             ],
         ];
     }

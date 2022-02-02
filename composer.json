@@ -1,5 +1,5 @@
 {
-    "name": "namnv609/php-onesignal-sdk",
+    "name": "rbpaulsen/php-onesignal-sdk",
     "description": "PHP SDK for OneSignal RESTful API",
     "type": "library",
     "license": "MIT",

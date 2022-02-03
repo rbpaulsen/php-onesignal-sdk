@@ -226,6 +226,7 @@ class Notification
                 'isWP_WNS' => 'bool',
                 'isAdm' => 'bool',
                 'isChrome' => 'bool',
+                'include_external_user_ids' => 'string',
             ],
         ];
     }
